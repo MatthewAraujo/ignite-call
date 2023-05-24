@@ -5,13 +5,14 @@ import { AuthError, ConnectBox, ConnectIem } from './styles'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 
-export default function Register() {
+export default function ConnectCalendar() {
   const session = useSession()
   const router = useRouter()
 
   const hasAuthError = Boolean(router.query.error)
   const isSignedIn = session.status === 'authenticated'
 
+  console.log(session)
   async function handleConnectCalendar() {
     await signIn('google')
   }
@@ -24,7 +25,7 @@ export default function Register() {
           Conecte o seu calendário para verificar automaticamente as horas
           ocupadas e os novos eventos em que são agendados.
         </Text>
-        <MultiStep size={4} currentStep={2}></MultiStep>
+        <MultiStep size={4} currentStep={3}></MultiStep>
       </Header>
       <ConnectBox>
         <ConnectIem>
