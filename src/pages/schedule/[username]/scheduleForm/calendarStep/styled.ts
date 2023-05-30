@@ -66,9 +66,7 @@ export const TimePickerItem = styled('button', {
   lineHeight: '$sm',
 
   '&:last-child': {
-    background: 'none',
-    cursor: 'default',
-    opacity: 0.4,
+    marginBottom: '$6',
   },
 
   '&:disabled': {
